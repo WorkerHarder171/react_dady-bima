@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Product</title>
+  </head>
+  <body>
+    <h1>Create Product</h1>
+    <h2>Detail Product</h2>
+
+    <!-- form -->
+    <form action="form">
+      <label for="#">Product name:</label> <br />
+      <input type="text" id="#" minlength="6" maxlength="50" required /> <br />
+
+      <!-- label select -->
+      <label for="#">Product Category:</label> <br />
+      <select name="cars" id="cars" required>
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+      </select>
+      <!-- end label select -->
+
+      <!-- radio-group -->
+      <div class="radio-grup">
+        <label for="#">Product Freshness:</label> <br />
+
+        <input type="radio" name="brand-product" value="Brand New" /><label
+          for=""
+          >Brand New</label
+        >
+        <br />
+        <input type="radio" name="brand-product" value="Second Hank" /><label
+          for=""
+          >Second Hank</label
+        >
+        <br />
+        <input
+          type="radio"
+          name="brand-product"
+          value="Refurbished"
+        />Refurbished
+      </div>
+      <!-- end radio-group -->
+
+      <label>Image of Product </label>
+      <input type="file" /> <br />
+      <label for="#">Additional Description</label> <br />
+      <textarea
+        name="additional description"
+        id="ad"
+        cols="30"
+        rows="10"
+        required
+      ></textarea>
+      <br />
+      <label for="#">Product Price:</label> <br />
+      <input type="number" placeholder="$ 100" required /> <br />
+      <br />
+      <input type="submit" value="Submit" />
+    </form>
+    <!-- end form -->
+  </body>
+</html>
