@@ -7,6 +7,7 @@
   font-family: "Poppins";
 }
 
+/* header */
 header {
   padding: 25px;
   display: flex;
@@ -20,6 +21,7 @@ header .nav-brand {
   font-weight: bold;
 }
 
+/* navigation */
 nav {
   width: 40%;
 }
@@ -52,13 +54,16 @@ nav ul li a:hover {
   border: solid 1px #0d6efd;
   transition: 0.3s ease-in-out;
 }
+/* end header */
 
+/* jumbotron */
 .jumbotron {
   height: auto;
   background-color: #37517e;
   padding: 100px 0;
 }
 
+/* wrapper */
 .wrapper {
   display: flex;
   justify-content: space-evenly;
@@ -76,6 +81,7 @@ nav ul li a:hover {
   color: #afb9cb;
 }
 
+/* wrapper button */
 .wrapper-button {
   margin: 25px 0;
   width: 300px;
@@ -105,6 +111,9 @@ nav ul li a:hover {
   color: #47b2e4;
   box-shadow: 2px 2px 5px 0px rgb(252, 252, 252, 0.2);
 }
+/* end jumbotron */
+
+/* content */
 .content {
   background-color: #f3f5fa;
   padding: 70px;
@@ -120,6 +129,10 @@ nav ul li a:hover {
   color: #444;
   margin: 10px 0;
 }
+
+/* search-bar group*/
+
+/* search-bar wrapper input&button */
 .content .search-bar {
   width: 45%;
   margin: 15px auto;
@@ -137,6 +150,7 @@ nav ul li a:hover {
   transform: scale(1.05,1.05);
 }
 
+/* search-bar */
 .search-bar #search {
   width: 85%;
   padding: 15px;
@@ -150,6 +164,7 @@ nav ul li a:hover {
   width: 87%;
 }
 
+/* search-bar button */
 .search-bar #btn {
   width: auto;
   color: #fff;
@@ -167,11 +182,19 @@ nav ul li a:hover {
   border: solid 1px #47b2e4;
   box-shadow: 2px 2px 5px 0px rgba(71, 178, 228, 0.5);
 }
+/* end content */
 
+/* footer */
 .footer-main {
   padding: 100px;
 }
 
+footer .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* alamat */
 .alamat .arsha {
   font-weight: bold;
   color: #37517e;
@@ -191,16 +214,14 @@ nav ul li a:hover {
   color: #777;
 }
 
+/* networks */
 .networks .lead {
   margin: 20px 0;
   width: 350px;
   color: #777;
 }
-footer .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
 
+/* grid group per-div */
 .grid .links,
 .services,
 .alamat,
@@ -215,6 +236,7 @@ footer .grid {
 .grid div ul {
   margin: 20px 0;
 }
+
 .grid div ul li {
   padding: 10px 25px;
 }
@@ -227,6 +249,8 @@ footer .grid {
 .group-circle {
   display: flex;
 }
+
+/* circle */
 .circle {
   width: 50px;
   height: 50px;
@@ -236,6 +260,7 @@ footer .grid {
   border: solid 1px #47b2e4;
 }
 
+/* copyright */
 .copyright {
   display: flex;
   justify-content: space-between;
@@ -243,3 +268,5 @@ footer .grid {
   padding: 30px 150px;
   color: #fff;
 }
+
+/* end footer */
