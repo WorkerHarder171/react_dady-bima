@@ -121,7 +121,7 @@ nav ul li a:hover {
   margin: 10px 0;
 }
 .content .search-bar {
-  width: 40%;
+  width: 45%;
   margin: 15px auto;
   display: flex;
   justify-content: space-between;
@@ -129,6 +129,12 @@ nav ul li a:hover {
   border: none;
   border-radius: 50px;
   box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.3);
+  transition: 0.3s ease-in-out;
+}
+
+.content .search-bar:hover {
+  width: 47%;
+  transform: scale(1.05,1.05);
 }
 
 .search-bar #search {
@@ -137,8 +143,12 @@ nav ul li a:hover {
   border: none;
   outline: none;
   border-radius: 50px;
+  transition: 0.3s ease-in-out;
 }
 
+.search-bar #search:hover {
+  width: 87%;
+}
 
 .search-bar #btn {
   width: auto;
@@ -151,11 +161,11 @@ nav ul li a:hover {
   transition: 0.3s ease-in-out;
 }
 
-.search-bar #btn:hover{
+.search-bar #btn:hover {
   background-color: #fff;
   color: #47b2e4;
   border: solid 1px #47b2e4;
-  box-shadow: 2px 2px 5px 0px rgba(71, 178, 228, 0.5)
+  box-shadow: 2px 2px 5px 0px rgba(71, 178, 228, 0.5);
 }
 
 .footer-main {
@@ -191,7 +201,10 @@ footer .grid {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
-.grid div {
+.grid .links,
+.services,
+.alamat,
+.networks {
   padding: 20px;
 }
 
@@ -209,6 +222,18 @@ footer .grid {
 .grid div ul li a {
   text-decoration: none;
   color: #777;
+}
+
+.group-circle {
+  display: flex;
+}
+.circle {
+  width: 50px;
+  height: 50px;
+  background-color: #47b2e4;
+  border-radius: 100%;
+  margin-right: 20px;
+  border: solid 1px #47b2e4;
 }
 
 .copyright {
