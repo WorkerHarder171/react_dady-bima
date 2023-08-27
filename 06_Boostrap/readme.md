@@ -1,0 +1,1 @@
+Resume 06_Boostrap => https://docs.google.com/document/d/1JL7CUeqYp0qjASZ6TQudiROQcI72J4r7clymdnmojNk/edit?usp=sharing

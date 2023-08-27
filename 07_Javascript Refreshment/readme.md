@@ -1,0 +1,1 @@
+Resume 07_Javascript Refreshment => https://docs.google.com/document/d/17ckizi_VjeT9ARiyeaWXbJ58RLScEiusV1O0Gii6LTU/edit?usp=sharing
