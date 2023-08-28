@@ -1,3 +1,6 @@
+*{
+list-style-type: none;
+}
 .blue-btn {
   background-color: #0d6efd;
   border-radius: 5px;
@@ -22,6 +25,18 @@
   width: 85%;
 }
 
+.w-55 {
+  width: 55%;
+}
+
+.w-45 {
+  width: 45%;
+}
+
+.w-40 {
+  width: 40%;
+}
+
 .lead {
   font-size: 24px;
   color: #afb9cb;
@@ -32,13 +47,34 @@
 }
 
 .wrapper {
-  background-color: #F3F5FA;
+  background-color: #f3f5fa;
 }
 
 .text-group h3 {
   color: #37517e;
 }
 
-.text-group p{
-    color: #444;
+.text-group p {
+  color: #444;
+}
+
+#search {
+  border: none;
+  outline: none;
+}
+
+footer .row {
+  padding: 100px;
+}
+
+.arsha h3 {
+  color: #37517e;
+}
+
+.networks h3{
+  color: #37517e;
+}
+
+.copyright{
+background-color: #37517e;
 }
