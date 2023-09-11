@@ -10,7 +10,7 @@
       integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
       crossorigin="anonymous"
     />
-    <script src="./formProduct.js"></script>
+    <script src="formProduct.js"></script>
   </head>
   <body>
     <!-- header -->
@@ -77,7 +77,7 @@
         </p>
 
         <!-- Form New -->
-        <form class="mx-auto my-5 w-50" id="FormProduct" method="POST">
+        <form class="mx-auto my-5 w-50" id="FormProduct" method="post" onsubmit="onListProduct">
           <div class="form-header">
             <h1 class="text-center">Detail Product</h1>
           </div>
@@ -268,7 +268,7 @@
 
             <!-- Button Group Table -->
             <div class="button-group-table my-3">
-              <button type="button" class="btn btn-primary" id="deletButton">
+              <button type="button" class="btn btn-primary" id="deleteButton">
                 Deletion
               </button>
               <button
@@ -281,9 +281,10 @@
             </div>
             <!-- End of Button Group Table -->
 
-            <script>
+            <!-- <script>
+
               document.addEventListener("DOMContentLoaded", function () {
-                const form = document.getElementById("listProduct");
+                const form = document.getElementById("ListProduct");
                 const tbody = document.querySelector("#ListProduct tbody");
                 const deleteButton = document.getElementById("deleteButton");
                 const searchButton = document.getElementById("searchButton");
@@ -292,38 +293,6 @@
                 let productList = [];
 
                 form.addEventListener("submit", (event) => {
-                const ProductName =
-                  document.getElementById("productName").value;
-                const ProductPrice =
-                  document.getElementById("productPrice").value;
-
-                // untuk membatasi maksimal length pada input form sebanyak 25 huruf
-                if (ProductName.length > 25) {
-                  alert("Last Name must not exceed 25 characters.");
-                  event.preventDefault();
-                  return;
-                }
-                // untuk membatasi minimal length pada input form sebanyak 10 huruf
-                if (ProductName.length < 10) {
-                  alert("Product Name must exceed 10 characters.");
-                  event.preventDefault();
-                  return;
-                }
-
-                if (ProductName === " " || ProductPrice === " ") {
-                  alert("Please enter a valid Product name and Product Price.");
-                  event.preventDefault();
-                  return;
-                }
-                // Untuk membetikan sebuah peringatan bahwa tidak boleh  ada inputan berupa simbol yang ada
-                const Symbols = /[@#{}]/;
-                if (Symbols.test(ProductName)) {
-                  alert("Name must not contain symbols.");
-                  event.preventDefault();
-                  return;
-                }
-              });
-                form.addEventListener("submit", function (event) {
                   event.preventDefault();
                   const productName =
                     document.getElementById("productName").value;
@@ -408,9 +377,7 @@
                   }
                 });
               });
-
-              const FormProduct = document.getElementById("FormProduct");
-            </script>
+            </script> -->
           </div>
         </div>
       </div>

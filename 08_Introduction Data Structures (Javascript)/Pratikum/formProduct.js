@@ -1,17 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
   const formProduct = document.getElementById("FormProduct");
-  const listProduct = document.getElementById("Listroduct");
   const tbody = document.querySelector("#ListProduct tbody");
   const deleteButton = document.getElementById("deleteButton");
   const searchButton = document.getElementById("searchButton");
   const searchInput = document.getElementById("tableSearch");
 
+  // Array
   let listOfProducts = [];
 
   // FormProduct script
-  formProduct.addEventListener("submit", (event) => {
+  formProduct.addEventListener("input", (event) => {
     const ProductName = document.getElementById("productName").value;
-    const ProductPrice = document.getElementById("productPrice").value;
 
     if (ProductName.length > 25) {
       alert("Last Name must not exceed 25 characters.");
@@ -25,97 +24,109 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    if (ProductName === " " || ProductPrice === " ") {
-      alert("Please enter a valid Product name and Product Price.");
-      event.preventDefault();
-      return;
-    }
-    // Untuk membetikan sebuah peringatan bahwa tidak boleh  ada inputan berupa simbol yang ada
+    // Untuk memberikan peringatann jika field tidak boleh kosong
     const Symbols = /[@#{}]/;
     if (Symbols.test(ProductName)) {
       alert("Name must not contain symbols.");
       event.preventDefault();
       return;
     }
+  });
 
-    // ListProduct Table script
-    listProduct.addEventListener("submit", function (event) {
+  formProduct.addEventListener("submit", function (event) {
+    event.preventDefault();
+    const ProductName = document.getElementById("productName").value;
+    const ProductPrice = document.getElementById("productPrice").value;
+
+    if (ProductName === "" || ProductPrice === "") {
+      alert("Please enter a valid Product name and Product Price.");
       event.preventDefault();
-      const productName = document.getElementById("productName").value;
-      const productCategory =
-        document.getElementById("floatingSelectGrid").value;
-      const imageOfProduct = document.getElementById("inputGroupFile02").value;
-      const productFreshnessRadio = document.querySelector(
-        "input[name='flexRadioDefault']:checked"
-      );
-      const additionalDescription = document.getElementById("add-desc").value;
-      const productPrice = document.getElementById("productPrice").value;
-
-      if (
-        productName &&
-        productCategory &&
-        additionalDescription &&
-        productPrice
-      ) {
-        const productFreshness = productFreshnessRadio
-          ? productFreshnessRadio.value
-          : "";
-
-        const product = {
-          name: productName,
-          category: productCategory,
-          image: imageOfProduct,
-          freshness: productFreshness,
-          additional: additionalDescription,
-          price: productPrice,
-        };
-
-        listOfProducts.push(product);
-        showProduct();
-      }
-    });
-
-    function showProduct() {
-      tbody.innerHTML = "";
-      listOfProducts.forEach((product, index) => {
-        const row = tbody.insertRow();
-        const cellIndex = row.insertCell(0);
-        const cellName = row.insertCell(1);
-        const cellCategory = row.insertCell(2);
-        const cellImage = row.insertCell(3);
-        const cellFreshness = row.insertCell(4);
-        const cellDescription = row.insertCell(5);
-        const cellPrice = row.insertCell(6);
-
-        cellIndex.textContent = index + 1;
-        cellName.textContent = product.name;
-        cellCategory.textContent = product.category;
-        cellImage.textContent = product.image;
-        cellFreshness.textContent = product.freshness;
-        cellDescription.textContent = product.additional;
-        cellPrice.textContent = product.price;
-      });
+      return;
     }
-    deleteButton.addEventListener("click", function () {
-      if (listOfProducts.length > 0) {
-        listOfProducts.pop();
-        displayProducts();
+    ListProduct();
+    // Untuk membetikan sebuah peringatan bahwa tidak boleh  ada inputan berupa simbol yang ada
+  });
+  // ListProduct Table script
+  function ListProduct() {
+    console.log("berhasil di submit");
+    const productName = document.getElementById("productName").value;
+    const productCategory = document.getElementById("floatingSelectGrid").value;
+    const imageOfProduct = document.getElementById("inputGroupFile02").value;
+    let productFreshnessRadio = "document.getElementsByName(flexRadioDefault);";
+    let freshness = "";
+    for (const radio of productFreshnessRadio) {
+      if (radio.checked) {
+        freshness = radio.value;
       }
-    });
+    }
+    const additionalDescription = document.getElementById("add-desc").value;
+    const productPrice = document.getElementById("productPrice").value;
 
-    searchButton.addEventListener("click", function () {
-      const searchTerm = searchInput.value.toLowerCase();
-      const foundProducts = listOfProducts.filter((product) =>
-        product.name.toLowerCase().includes(searchTerm)
-      );
+    console.log(
+      productName,
+      productCategory,
+      imageOfProduct,
+      productFreshnessRadio,
+      additionalDescription,
+      productPrice
+    );
 
-      if (foundProducts.length > 0) {
-        alert(
-          "Found Products:\n" + foundProducts.map((p) => p.name).join("\n")
-        );
-      } else {
-        alert("No matching products found.");
-      }
+    const product = {
+      name: productName,
+      category: productCategory,
+      image: imageOfProduct,
+      freshness: productFreshnessRadio,
+      additional: additionalDescription,
+      price: productPrice,
+    };
+
+    listOfProducts.push(product);
+    console.log(product);
+    console.log("Data berhasil dikirim: ", listOfProducts);
+    showProduct();
+    console.log(showProduct());
+  }
+  // Show Product
+  function showProduct() {
+    tbody.innerHTML = "";
+    listOfProducts.forEach((product, index) => {
+      const row = tbody.insertRow();
+      const cellIndex = row.insertCell(0);
+      const cellName = row.insertCell(1);
+      const cellCategory = row.insertCell(2);
+      const cellImage = row.insertCell(3);
+      const cellFreshness = row.insertCell(4);
+      const cellDescription = row.insertCell(5);
+      const cellPrice = row.insertCell(6);
+
+      cellIndex.textContent = index + 1;
+      cellName.textContent = product.name;
+      cellCategory.textContent = product.category;
+      cellImage.textContent = product.image;
+      cellFreshness.textContent = product.freshness;
+      cellDescription.textContent = product.additional;
+      cellPrice.textContent = product.price;
     });
+  }
+  // Untuk melakukan delete pada table dimana kita disinni
+  // menggunakann pop sehingga akan terhapus mulai dari belakang
+  deleteButton.addEventListener("click", function () {
+    if (listOfProducts.length > 0) {
+      listOfProducts.pop();
+      showProduct();
+    }
+  });
+
+  searchButton.addEventListener("click", function () {
+    const searchTerm = searchInput.value.toLowerCase();
+    const foundProducts = listOfProducts.filter((product) =>
+      product.name.toLowerCase().includes(searchTerm)
+    );
+
+    if (foundProducts.length > 0) {
+      alert("Found Products:\n" + foundProducts.map((p) => p.name).join("\n"));
+    } else {
+      alert("No matching products found.");
+    }
   });
 });
