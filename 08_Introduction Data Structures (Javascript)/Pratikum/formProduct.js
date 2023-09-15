@@ -2,15 +2,21 @@ document.addEventListener("DOMContentLoaded", function () {
   const formProduct = document.getElementById("FormProduct");
   const tbody = document.querySelector("#ListProduct tbody");
   const deleteButton = document.getElementById("deleteButton");
-  const searchButton = document.getElementById("searchButton");
-  const searchInput = document.getElementById("tableSearch");
+  const searchButton = document.getElementById("searchButton");;
 
   // Array
   let listOfProducts = [];
 
   // FormProduct script
-  formProduct.addEventListener("input", (event) => {
+  // formProduct.addEventListener("input", (event) => {
+  //   const ProductName = document.getElementById("productName").value;
+
+  // });
+
+  formProduct.addEventListener("submit", function (event) {
+    event.preventDefault();
     const ProductName = document.getElementById("productName").value;
+    const ProductPrice = document.getElementById("productPrice").value;
 
     if (ProductName.length > 25) {
       alert("Last Name must not exceed 25 characters.");
@@ -31,19 +37,14 @@ document.addEventListener("DOMContentLoaded", function () {
       event.preventDefault();
       return;
     }
-  });
-
-  formProduct.addEventListener("submit", function (event) {
-    event.preventDefault();
-    const ProductName = document.getElementById("productName").value;
-    const ProductPrice = document.getElementById("productPrice").value;
-
     if (ProductName === "" || ProductPrice === "") {
       alert("Please enter a valid Product name and Product Price.");
       event.preventDefault();
       return;
     }
-    ListProduct();
+    else{
+      ListProduct();
+    }
     // Untuk membetikan sebuah peringatan bahwa tidak boleh  ada inputan berupa simbol yang ada
   });
   // ListProduct Table script
@@ -118,9 +119,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   searchButton.addEventListener("click", function () {
-    const searchTerm = searchInput.value.toLowerCase();
     const foundProducts = listOfProducts.filter((product) =>
-      product.name.toLowerCase().includes(searchTerm)
+      product.name.toLowerCase()
     );
 
     if (foundProducts.length > 0) {
