@@ -2,22 +2,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const formProduct = document.getElementById("FormProduct");
   const tbody = document.querySelector("#ListProduct tbody");
   const deleteButton = document.getElementById("deleteButton");
-  const searchButton = document.getElementById("searchButton");;
+  const searchButton = document.getElementById("searchButton");
 
   // Array
   let listOfProducts = [];
 
-  // FormProduct script
-  // formProduct.addEventListener("input", (event) => {
-  //   const ProductName = document.getElementById("productName").value;
-
-  // });
 
   formProduct.addEventListener("submit", function (event) {
     event.preventDefault();
     const ProductName = document.getElementById("productName").value;
     const ProductPrice = document.getElementById("productPrice").value;
 
+    //untuk membatasi maximal length adalah 25
     if (ProductName.length > 25) {
       alert("Last Name must not exceed 25 characters.");
       event.preventDefault();
@@ -30,24 +26,25 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // Untuk memberikan peringatann jika field tidak boleh kosong
+    // Untuk memberikan peringatan tidak boleh ada simbol tersebut pada field
     const Symbols = /[@#{}]/;
     if (Symbols.test(ProductName)) {
       alert("Name must not contain symbols.");
       event.preventDefault();
       return;
     }
+
+    //melakukan pengecekan pada variabel ProductName dan ProductPrice
     if (ProductName === "" || ProductPrice === "") {
       alert("Please enter a valid Product name and Product Price.");
       event.preventDefault();
       return;
-    }
-    else{
+    } else {
       ListProduct();
     }
-    // Untuk membetikan sebuah peringatan bahwa tidak boleh  ada inputan berupa simbol yang ada
   });
-  // ListProduct Table script
+  // ListProduct
+// merupakan function yang digunakan untuk melakukan getData yang kemudian dimasukan kepada object
   function ListProduct() {
     console.log("berhasil di submit");
     const productName = document.getElementById("productName").value;
@@ -87,7 +84,9 @@ document.addEventListener("DOMContentLoaded", function () {
     showProduct();
     console.log(showProduct());
   }
+
   // Show Product
+  //merupakan function yang digunakan untuk menampilkan data pada table
   function showProduct() {
     tbody.innerHTML = "";
     listOfProducts.forEach((product, index) => {
@@ -109,8 +108,9 @@ document.addEventListener("DOMContentLoaded", function () {
       cellPrice.textContent = product.price;
     });
   }
-  // Untuk melakukan delete pada table dimana kita disinni
-  // menggunakann pop sehingga akan terhapus mulai dari belakang
+
+  //deleteButton
+  // memiliki kegunaan untuk menghapus data menggunakan method pop sehingga dalam penghapusan dimulai dari belakang
   deleteButton.addEventListener("click", function () {
     if (listOfProducts.length > 0) {
       listOfProducts.pop();
@@ -118,6 +118,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  // searchButton
+  //meiliki kegunaan untuk melakukan pencarian pada nama product yang ada pada form/table
   searchButton.addEventListener("click", function () {
     const foundProducts = listOfProducts.filter((product) =>
       product.name.toLowerCase()

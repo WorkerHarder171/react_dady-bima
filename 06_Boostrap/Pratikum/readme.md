@@ -7,7 +7,7 @@ Soal Prioritas 2 (Nilai 20)
 Gunakan grid system dari BS ketika membuat CreateProduct.html.
 Buatlah halaman memiliki validasi memanfaatkan BS
 
-![foto] (./Screenshots/landingPage1.jpeg)
-![foto2] (./Screenshots/landingPage2.jpeg)
-![foto3] (./Screenshots/CreateProduct1.jpeg)
-![foto4] (./Screenshots/CreateProduct2.jpeg)
+![Alt foto](../Screenshots/LadingPage1.jpeg)
+![Alt foto](../Screenshots/LadingPage2.jpeg)
+![Alt foto](../Screenshots/CreateProduct1.jpeg)
+![Alt foto](../Screenshots/CreateProduct2.jpeg)

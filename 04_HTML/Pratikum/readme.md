@@ -13,6 +13,6 @@ form product Product Name mempunyai minimal 6 huruf dan maksimal 50 huruf
 Product Price harus berupa angka
 Sambungkan halaman landingPage.html dengan CreateAccount.html sehingga dapat berpindah halaman
 
-![foto] (./Screenshots/createProduct.jpeg)
-![foto2] (./Screenshots/landingPage1.jpeg)
-![foto3] (./Screenshots/landingPage2.jpeg)
+![Alt foto](../Screenshots/createProduct.jpeg.jpg)
+![Alt foto](../Screenshots/landingPage1.jpeg)
+![Alt foto](../Screenshots/landingPage2.jpeg)
