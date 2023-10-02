@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+footer {
+  margin: 0 auto;
+  padding: 100px 150px;
+  background: #0dcaf0;
+  color: #fff;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 50px;
+}
+
+.title-text {
+  font-size: 2.8em;
+}
+
+.sub-title-text {
+  font-size: 1.5em;
+}
+
+.lead {
+  margin: 20px 0;
+}
+
+.lead a {
+  text-decoration: none;
+}
+
+.social-group a {
+  margin: 0 10px;
+  color: #000;
+  font-size: 24px;
+}
+.grid{
+    margin: 0 auto;
+}
+.grid ul li a {
+  display: flex;
+  text-decoration: none;
+  margin: 10px 0;
+  color: #fff;
+}
+
+/* search-bar group*/
+
+/* search-bar wrapper input&button */
+.search-bar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  border: none;
+  border-radius: 10px;
+  transition: 0.5s ease-in-out;
+}
+
+/* search-bar */
+.search-bar #search {
+  width: 70%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  transition: 0.3s ease-in-out;
+}
+
+/* search-bar button */
+.search-bar #btn {
+  width: auto;
+  color: #fff;
+  background-color: #47b2e4;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.search-bar #btn:hover {
+  background-color: #fff;
+  color: #47b2e4;
+  border: solid 1px #47b2e4;
+  box-shadow: 2px 2px 5px 0px rgba(71, 178, 228, 0.5);
+}

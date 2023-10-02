@@ -1,15 +1,16 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>07_Javascript Refreshment</title>
+    <title>Boostrap 5</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
       crossorigin="anonymous"
     />
+    <script src="table.js"></script>
   </head>
   <body>
     <!-- header -->
@@ -70,14 +71,18 @@
         />
         <h3 class="text-center mt-4">Create Product</h3>
         <p class="lead text-center w-50 mx-auto">
-          Below is an example form built entirely with Bootstraps form
+          Below is an example form built entirely with Bootstrap’s form
           controls. Each required form group has a validation state that can be
           triggered by attempting to submit the form without completing it.
         </p>
 
-
         <!-- Form New -->
-        <form id="FormProduct" class="mx-auto my-5 w-50">
+        <form
+          class="mx-auto my-5 w-50"
+          id="FormProduct"
+          method="post"
+          onsubmit="onListProduct"
+        >
           <div class="form-header">
             <h1 class="text-center">Detail Product</h1>
           </div>
@@ -88,9 +93,10 @@
               <input
                 type="text"
                 id="productName"
-                minlength="5"
+                minlength="10"
                 maxlength="30"
                 class="form-control"
+                name="productName"
               />
             </div>
             <!-- End of Product Name -->
@@ -98,7 +104,11 @@
             <!-- Product Category -->
             <div class="product-category mt-3">
               <p>Product Category</p>
-              <select class="form-select" id="floatingSelectGrid">
+              <select
+                class="form-select"
+                name="productCategory"
+                id="floatingSelectGrid"
+              >
                 <option selected>Choose...</option>
                 <option value="volvo">Volvo</option>
                 <option value="mercedes">Mercedes</option>
@@ -111,7 +121,12 @@
             <div class="image-of-product mt-3">
               <p>Image Of Product</p>
               <div class="input-group mb-3">
-                <input type="file" class="form-control" id="inputGroupFile02" />
+                <input
+                  type="file"
+                  class="form-control"
+                  name="imageOfProduct"
+                  id="inputGroupFile02"
+                />
               </div>
             </div>
             <!-- End of Image of Product -->
@@ -137,7 +152,7 @@
                   name="flexRadioDefault"
                   id="flexRadioDefault2"
                 />
-                <label class="form-check-label" for="flexRadioDefault2">
+                <label class="form-check-label" for="flexRadioDefault1">
                   Second Hank
                 </label>
               </div>
@@ -148,7 +163,7 @@
                   name="flexRadioDefault"
                   id="flexRadioDefault3"
                 />
-                <label class="form-check-label" for="flexRadioDefault3">
+                <label class="form-check-label" for="flexRadioDefault1">
                   Refurbished
                 </label>
               </div>
@@ -159,7 +174,7 @@
             <div class="additional-desc mt-3">
               <p>Additional Description</p>
               <textarea
-                name="additional description"
+                name="additionalDescription"
                 id="add-desc"
                 cols="30"
                 rows="10"
@@ -174,10 +189,11 @@
               <div class="input-group mb-3">
                 <span class="input-group-text">$</span>
                 <input
-                  type="number"
-                  id="productPrice"
+                  type="text"
                   class="form-control"
                   aria-label="Amount (to the nearest dollar)"
+                  id="productPrice"
+                  name="productPrice"
                 />
               </div>
             </div>
@@ -195,48 +211,87 @@
         </form>
         <!-- End of Form New -->
 
-        <!-- Script -->
-        <script lang="javascript">
-          const FormProduct = document.getElementById("FormProduct");
+        <!-- table -->
+        <div class="tabel-section mt-5">
+          <div class="container">
+            <h1 class="title-text text-center">List Product</h1>
+            <table class="table table-striped" id="ListProduct">
+              <thead>
+                <tr>
+                  <th scope="col">No</th>
+                  <th scope="col">Product Name</th>
+                  <th scope="col">Product Category</th>
+                  <th scope="col">Image of Product</th>
+                  <th scope="col">Product Freshness</th>
+                  <th scope="col">Additional Description</th>
+                  <th scope="col">Product Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Coffee</td>
+                  <td>Baverages</td>
+                  <td>image.png</td>
+                  <td>Brand New</td>
+                  <td>This is of a cup of Coffee</td>
+                  <td>$1000</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Onigiri</td>
+                  <td>Foods</td>
+                  <td>Images.png</td>
+                  <td>Second Hank</td>
+                  <td>This is a Onigiri</td>
+                  <td>$1500</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Cake</td>
+                  <td>Foods</td>
+                  <td>Cake.jpg</td>
+                  <td>Refurbished</td>
+                  <td>This is a Cake</td>
+                  <td>$2000</td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- end of table -->
 
-          FormProduct.addEventListener("submit", (event) => {
-            const ProductName = document.getElementById("productName").value;
-            const ProductPrice = document.getElementById("productPrice").value;
+            <!-- Table Search -->
+            <div class="search-table my-3">
+              <input
+                type="search"
+                name="search-table"
+                id="tabelSearch"
+                class="form-control"
+                placeholder="Search"
+              />
+            </div>
+            <!-- End of Table Search -->
 
-            // untuk membatasi maksimal length pada input form sebanyak 25 huruf
-            if (ProductName.length > 25) {
-              alert("Last Name must not exceed 25 characters.");
-              event.preventDefault();
-              return;
-            }
-            // untuk membatasi minimal length pada input form sebanyak 10 huruf
-            if (ProductName.length < 10) {
-              alert("Product Name must exceed 10 characters.");
-              event.preventDefault();
-              return;
-            }
-            //Untuk memberikan peringatan bahwa tidak boleh ada inputan space
-            if (ProductName != " " || ProductPrice != " ") {
-              alert("Name must not contain space character..");
-              event.preventDefault();
-              return;
-            }
+            <!-- Button Group Table -->
+            <div class="button-group-table my-3">
+              <!-- deleteButton -->
+              <button type="button" class="btn btn-primary" id="deleteButton">
+                Deletion
+              </button>
+              <!-- end of deleteButton -->
 
-            if (ProductName === " " || ProductPrice === " ") {
-              alert("Please enter a valid Product name and Product Price.");
-              event.preventDefault();
-              return;
-            }
-            // Untuk membetikan sebuah peringatan bahwa tidak boleh  ada inputan berupa simbol yang ada
-            const Symbols = /[@#{}]/;
-            if (Symbols.test(ProductName)) {
-              alert("Name must not contain symbols.");
-              event.preventDefault();
-              return;
-            }
-          });
-        </script>
-        <!-- End of Script -->
+              <!-- searchButton -->
+              <button
+                type="button"
+                class="btn btn-outline-primary"
+                id="searchButton"
+              >
+                Search
+              </button>
+              <!-- end of searchButton -->
+            </div>
+            <!-- End of Button Group Table -->
+          </div>
+        </div>
       </div>
     </main>
   </body>
