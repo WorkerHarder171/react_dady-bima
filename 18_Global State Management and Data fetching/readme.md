@@ -1,0 +1,1 @@
+Resume 18_Global State Management and Data fetching => https://docs.google.com/document/d/1a9iD3HeJ9IA2wm2dNducxPziJb88O8jO9xuT87VUXfg/edit?usp=sharing
