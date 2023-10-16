@@ -1,1 +1,1 @@
-Resume 08_Introduction Data Structures (Javascript) =>
+Resume 08_Introduction Data Structures (Javascript) => https://docs.google.com/document/d/1J2gR0DpC-3vFB3IyKpJVHBGZjKfaHDKxPoiTdRDditM/edit?usp=sharing
