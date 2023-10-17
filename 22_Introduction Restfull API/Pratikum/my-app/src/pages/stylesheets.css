@@ -1,0 +1,105 @@
+/* Settings All */
+*{
+    list-style-type: none;
+    }
+
+    /* Navbar */
+    .navbar-nav li {
+      margin: 0px 15px;
+    }
+
+    .navbar-nav li a {
+      color: #0d6efd;
+    }
+
+    /* jumbotron */
+    .jumbotron {
+      padding: 150px;
+      background-color: #37517e;
+    }
+
+    /* width */
+    .w-80 {
+      width: 85%;
+    }
+
+    .w-55 {
+      width: 55%;
+    }
+
+    .w-45 {
+      width: 45%;
+    }
+
+    .w-40 {
+      width: 40%;
+    }
+
+    /* text */
+    .title-text {
+      font-size: 48px;
+    }
+
+    .lead {
+      font-size: 24px;
+      color: #afb9cb;
+    }
+
+    /* buttons */
+    #submit {
+      background-color: #47b2e4;
+    }
+
+    .blue-btn {
+      background-color: #0d6efd;
+      border-radius: 5px;
+    }
+
+    .wrapper {
+      background-color: #f3f5fa;
+    }
+
+    /* wrapper-search */
+    .text-group h3 {
+      color: #37517e;
+    }
+
+    .text-group p {
+      color: #444;
+    }
+
+    #search {
+      border: none;
+      outline: none;
+    }
+
+    /* footer */
+    footer .row {
+      padding: 100px;
+    }
+
+    .arsha h3 {
+      color: #37517e;
+    }
+
+    .networks h3{
+      color: #37517e;
+    }
+
+    .copyright{
+    background-color: #37517e;
+    }
+
+    .group-circle {
+      display: flex;
+    }
+
+    /* circle */
+    .circle {
+      width: 50px;
+      height: 50px;
+      background-color: #47b2e4;
+      border-radius: 100%;
+      margin-right: 20px;
+      border: solid 1px #47b2e4;
+    }
