@@ -30,13 +30,8 @@ function Table({ product, deleteProduct }) {
                   <td>{data.additional}</td>
                   <td>${data.price}</td>
                   <td>
-                    <Link
-                      className="btn btn-success"
-                      to={`/product/${data.id}`}
-                      product = {product}
-                    >
-                      Details
-                    </Link>
+                  <Link className="btn btn-success"  to={`/product-details/${data.id}`}>Details</Link>
+
                     <Link
                       to={`/edit-product/${data.id}`}
                       className="btn btn-primary m-1"

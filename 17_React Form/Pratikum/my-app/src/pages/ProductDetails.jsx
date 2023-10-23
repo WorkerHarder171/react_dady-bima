@@ -3,9 +3,9 @@ import Header from "../components/Header";
 import { useParams, Link } from "react-router-dom";
 
 function ProductDetails({ product }) {
-console.log("cek product PD =>",product)
+  console.log("cek product PD =>", product);
   const { params } = useParams();
-  const user = product.find((data) => data.id === params);
+  const user = (data) => data.id === params;
 
   const { id, name, category, image, freshness, additional, price } = user;
 

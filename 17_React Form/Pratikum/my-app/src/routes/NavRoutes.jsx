@@ -12,7 +12,7 @@ function NavRoutes() {
         <Route path="/" element={<Login />} />
         <Route path="/landingPage" element={<LandingPage />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/product/:id" element={<ProductDetails />} />
+        <Route path="/product-details/:id" element={<ProductDetails />} />
         {/* <Route path="/edit-product/:id" element={<EditTable />} /> */}
       </Routes>
     </BrowserRouter>
