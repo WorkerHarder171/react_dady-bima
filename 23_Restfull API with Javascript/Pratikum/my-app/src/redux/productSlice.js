@@ -24,7 +24,10 @@ export const deleteApiProduct = createAsyncThunk(
 
 export const editApiProduct = createAsyncThunk(
   "product/editApiProduct:id",
-  restFullAPI.editProduct
+  async (data) => {
+    const response = await restFullAPI.editProduct(data.id, data);
+    return response.data;
+  }
 );
 
 export const productSlice = createSlice({
@@ -48,7 +51,6 @@ export const productSlice = createSlice({
     builder.addCase(postApiProduct.fulfilled, (state, action) => {
       state.status = "succeeded";
       state.products = [...state.products, action.payload];
-      // console.log("cheked:", action.payload);
     });
     builder.addCase(postApiProduct.rejected, (state, action) => {
       state.status = "failed";
@@ -59,13 +61,7 @@ export const productSlice = createSlice({
     });
     builder.addCase(deleteApiProduct.fulfilled, (state, action) => {
       state.status = "succeeded";
-      // state.products = action.payload
-      state.products = state.products.filter((data) => {
-        if (data.id !== action.payload) {
-          return { data };
-        }
-        return alert("Apakah anda ingin menghapus product ini?");
-      });
+      state.products = action.payload;
     });
     builder.addCase(deleteApiProduct.rejected, (state, action) => {
       state.status = "failed";
@@ -76,9 +72,7 @@ export const productSlice = createSlice({
     });
     builder.addCase(editApiProduct.fulfilled, (state, action) => {
       state.status = "succeeded";
-      state.products = action
-      console.log(state)
-      console.log(action)
+      state.products = action.payload;
     });
     builder.addCase(editApiProduct.rejected, (state, action) => {
       state.status = "failed";
