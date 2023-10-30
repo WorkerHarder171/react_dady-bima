@@ -1,1 +1,0 @@
-Resume 13_React Fundamental => https://docs.google.com/document/d/1wTlXBtliBmCnSc_-D4E8AcK09ZkR50p8GbmXU1nvNpI/edit
