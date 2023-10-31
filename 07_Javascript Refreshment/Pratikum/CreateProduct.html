@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>07_Javascript Refreshment</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!-- header -->
+    <header class="shadow-sm p-2">
+      <!-- navbar -->
+      <nav class="navbar navbar-expand-lg bg-body-light">
+        <div class="container-fluid">
+          <a class="navbar-brand fw-bold" href="#">Simple Header</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a
+                  class="nav-link active blue-btn text-light btn btn-primary"
+                  aria-current="page"
+                  href="#"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-primary" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-primary" href="#">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-primary" href="#">FAQs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-primary" href="#">About</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- end navbar -->
+    </header>
+    <!-- end header -->
+
+    <main>
+      <div class="text-group p-5">
+        <img
+          src="../Screenshots/bootstrap-logo.svg.png"
+          alt="Logo"
+          width="72"
+          height="57"
+          class="mx-auto d-block"
+        />
+        <h3 class="text-center mt-4">Create Product</h3>
+        <p class="lead text-center w-50 mx-auto">
+          Below is an example form built entirely with Bootstraps form
+          controls. Each required form group has a validation state that can be
+          triggered by attempting to submit the form without completing it.
+        </p>
+
+
+        <!-- Form New -->
+        <form id="FormProduct" class="mx-auto my-5 w-50">
+          <div class="form-header">
+            <h1 class="text-center">Detail Product</h1>
+          </div>
+          <div class="form-body">
+            <!-- Product Name -->
+            <div class="product-name mt-3">
+              <p>Product Name</p>
+              <input
+                type="text"
+                id="productName"
+                minlength="5"
+                maxlength="30"
+                class="form-control"
+              />
+            </div>
+            <!-- End of Product Name -->
+
+            <!-- Product Category -->
+            <div class="product-category mt-3">
+              <p>Product Category</p>
+              <select class="form-select" id="floatingSelectGrid">
+                <option selected>Choose...</option>
+                <option value="volvo">Volvo</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+              </select>
+            </div>
+            <!-- End of Product Category -->
+
+            <!-- Image of Product -->
+            <div class="image-of-product mt-3">
+              <p>Image Of Product</p>
+              <div class="input-group mb-3">
+                <input type="file" class="form-control" id="inputGroupFile02" />
+              </div>
+            </div>
+            <!-- End of Image of Product -->
+
+            <!-- Product Freshness -->
+            <div class="product-freshness mt-3">
+              <p>Product Freshness</p>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="flexRadioDefault"
+                  id="flexRadioDefault1"
+                />
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Brand New
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="flexRadioDefault"
+                  id="flexRadioDefault2"
+                />
+                <label class="form-check-label" for="flexRadioDefault2">
+                  Second Hank
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="flexRadioDefault"
+                  id="flexRadioDefault3"
+                />
+                <label class="form-check-label" for="flexRadioDefault3">
+                  Refurbished
+                </label>
+              </div>
+            </div>
+            <!-- End of Product Freshness -->
+
+            <!-- Additional Description -->
+            <div class="additional-desc mt-3">
+              <p>Additional Description</p>
+              <textarea
+                name="additional description"
+                id="add-desc"
+                cols="30"
+                rows="10"
+                class="form-control"
+              ></textarea>
+              <!-- End of Additional Description -->
+            </div>
+
+            <!-- Product Price -->
+            <div class="product-price mt-3">
+              <p>Product Price</p>
+              <div class="input-group mb-3">
+                <span class="input-group-text">$</span>
+                <input
+                  type="number"
+                  id="productPrice"
+                  class="form-control"
+                  aria-label="Amount (to the nearest dollar)"
+                />
+              </div>
+            </div>
+            <!-- End of Product Price -->
+
+            <!-- Buttons -->
+            <input
+              type="submit"
+              id="btn"
+              value="Submit"
+              class="btn w-100 btn-primary"
+            />
+            <!-- End of Buttons -->
+          </div>
+        </form>
+        <!-- End of Form New -->
+
+        <!-- Script -->
+        <script lang="javascript">
+          const FormProduct = document.getElementById("FormProduct");
+
+          FormProduct.addEventListener("submit", (event) => {
+            const ProductName = document.getElementById("productName").value;
+            const ProductPrice = document.getElementById("productPrice").value;
+
+            // untuk membatasi maksimal length pada input form sebanyak 25 huruf
+            if (ProductName.length > 25) {
+              alert("Last Name must not exceed 25 characters.");
+              event.preventDefault();
+              return;
+            }
+            // untuk membatasi minimal length pada input form sebanyak 10 huruf
+            if (ProductName.length < 10) {
+              alert("Product Name must exceed 10 characters.");
+              event.preventDefault();
+              return;
+            }
+            //Untuk memberikan peringatan bahwa tidak boleh ada inputan space
+            if (ProductName != " " || ProductPrice != " ") {
+              alert("Name must not contain space character..");
+              event.preventDefault();
+              return;
+            }
+
+            if (ProductName === " " || ProductPrice === " ") {
+              alert("Please enter a valid Product name and Product Price.");
+              event.preventDefault();
+              return;
+            }
+            // Untuk membetikan sebuah peringatan bahwa tidak boleh  ada inputan berupa simbol yang ada
+            const Symbols = /[@#{}]/;
+            if (Symbols.test(ProductName)) {
+              alert("Name must not contain symbols.");
+              event.preventDefault();
+              return;
+            }
+          });
+        </script>
+        <!-- End of Script -->
+      </div>
+    </main>
+  </body>
+</html>

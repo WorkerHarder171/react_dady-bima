@@ -1,0 +1,272 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  font-family: "Poppins";
+}
+
+/* header */
+header {
+  padding: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+header .nav-brand {
+  text-decoration: none;
+  font-size: 22px;
+  color: #000;
+  font-weight: bold;
+}
+
+/* navigation */
+nav {
+  width: 40%;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+nav ul li a {
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #0d6efd;
+  transition: 0.6s ease;
+}
+nav ul li a:hover {
+  color: #777;
+  margin: 0 25px;
+  font-weight: bold;
+}
+
+.current {
+  border-radius: 5px;
+  color: #fff;
+  background-color: #0d6efd;
+}
+.current:hover {
+  color: #0d6efd;
+  background-color: #fff;
+  border: solid 1px #0d6efd;
+  transition: 0.3s ease-in-out;
+}
+/* end header */
+
+/* jumbotron */
+.jumbotron {
+  height: auto;
+  background-color: #37517e;
+  padding: 100px 0;
+}
+
+/* wrapper */
+.wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.wrapper-text .title-text {
+  width: 450px;
+  color: #fff;
+}
+
+.wrapper .lead {
+  margin: 15px 0;
+  width: 500px;
+  color: #afb9cb;
+}
+
+/* wrapper button */
+.wrapper-button {
+  margin: 25px 0;
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.wrapper-button a {
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.wrapper-button a:hover {
+  color: #47b2e4;
+}
+
+.wrapper-button .btn {
+  background-color: #47b2e4;
+  border-radius: 25px;
+
+  transition: 0.3s ease-in-out;
+}
+
+.wrapper-button .btn:hover {
+  background-color: #fff;
+  color: #47b2e4;
+  box-shadow: 2px 2px 5px 0px rgb(252, 252, 252, 0.2);
+}
+/* end jumbotron */
+
+/* content */
+.content {
+  background-color: #f3f5fa;
+  padding: 70px;
+  text-align: center;
+}
+
+.content .second-text {
+  margin: 10px 0;
+  color: #37517e;
+}
+
+.content .lead {
+  color: #444;
+  margin: 10px 0;
+}
+
+/* search-bar group*/
+
+/* search-bar wrapper input&button */
+.content .search-bar {
+  width: 45%;
+  margin: 15px auto;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.3);
+  transition: 0.3s ease-in-out;
+}
+
+.content .search-bar:hover {
+  width: 47%;
+  transform: scale(1.05,1.05);
+}
+
+/* search-bar */
+.search-bar #search {
+  width: 85%;
+  padding: 15px;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  transition: 0.3s ease-in-out;
+}
+
+.search-bar #search:hover {
+  width: 87%;
+}
+
+/* search-bar button */
+.search-bar #btn {
+  width: auto;
+  color: #fff;
+  background-color: #47b2e4;
+  padding: 10px 20px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.search-bar #btn:hover {
+  background-color: #fff;
+  color: #47b2e4;
+  border: solid 1px #47b2e4;
+  box-shadow: 2px 2px 5px 0px rgba(71, 178, 228, 0.5);
+}
+/* end content */
+
+/* footer */
+.footer-main {
+  padding: 100px;
+}
+
+footer .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* alamat */
+.alamat .arsha {
+  font-weight: bold;
+  color: #37517e;
+  text-decoration: none;
+  font-size: 30px;
+}
+.alamat .lead {
+  width: 175px;
+  font-size: 18px;
+  margin: 20px 0;
+  color: #777;
+}
+
+.alamat .phone,
+.email {
+  font-size: 18px;
+  color: #777;
+}
+
+/* networks */
+.networks .lead {
+  margin: 20px 0;
+  width: 350px;
+  color: #777;
+}
+
+/* grid group per-div */
+.grid .links,
+.services,
+.alamat,
+.networks {
+  padding: 20px;
+}
+
+.grid div h3 {
+  color: #37517e;
+}
+
+.grid div ul {
+  margin: 20px 0;
+}
+
+.grid div ul li {
+  padding: 10px 25px;
+}
+
+.grid div ul li a {
+  text-decoration: none;
+  color: #777;
+}
+
+.group-circle {
+  display: flex;
+}
+
+/* circle */
+.circle {
+  width: 50px;
+  height: 50px;
+  background-color: #47b2e4;
+  border-radius: 100%;
+  margin-right: 20px;
+  border: solid 1px #47b2e4;
+}
+
+/* copyright */
+.copyright {
+  display: flex;
+  justify-content: space-between;
+  background-color: #37517e;
+  padding: 30px 150px;
+  color: #fff;
+}
+
+/* end footer */

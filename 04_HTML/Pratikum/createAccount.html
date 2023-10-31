@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Account</title>
+  </head>
+  <body>
+    <h1>Create Account</h1>
+    <h2>Detail Form</h2>
+
+    <!-- Form -->
+    <form action="#`">
+
+      <!-- Label Name -->
+      <label for="#">First name: </label> <br />
+      <input type="text" required /><br /><br />
+      <label for="#">Last name:</label> <br />
+      <input type="text" required /><br /><br />
+      <label for="#">Username:</label> <br />
+      <input type="text" minlength="6" maxlength="10" required /><br /><br />
+      <label for="#">Email</label> <br />
+      <input type="email" required /><br /><br />
+      <!-- End Label Name -->
+
+      <!-- Gender Group -->
+      <div class="gender-group">
+        <label for="#">Gender:</label> <br>
+        <input type="radio" name="gender" value="Male" />
+        <label for="#">Male</label> <br />
+        <input type="radio" name="gender" value="Female" />
+        <label for="#">Female</label> <br />
+        <input type="radio" name="gender" value="other" />
+        <label for="#">Other</label> <br />
+      </div>  <br>
+      <!-- End Gender Group -->
+
+      <!-- Label Address -->
+      <label for="#">Address:</label> <br />
+      <input type="text" required /><br /><br />
+      <label for="#">Address 2:</label> <br />
+      <input type="text" required /><br /><br />
+      <label for="#">Nasionality:</label> <br />
+      <select name="nasionality" id="#">
+        <option value="Indonesia">Indonesia</option>
+        <option value="Japan">Japan</option>
+        <option value="Rusia">Rusia</option>
+      </select>
+      <br />
+      <br />
+      <label for="#">Language Spoken:</label> <br />
+      <input type="checkbox" name="laguage1" value="indonesia">
+      <label for="vehicle1">Bahasa  Indonesia</label><br>
+      <input type="checkbox" name="laguage2" value="english">
+      <label for="vehicle2">English</label><br>
+      <input type="checkbox" name="laguage3" value="other">
+      <label for="vehicle3">Other</label><br><br>
+      <!-- End Label Address -->
+
+      <input type="submit" value="Create Account">
+    </form>
+    <!-- End Form -->
+  </body>
+</html>
