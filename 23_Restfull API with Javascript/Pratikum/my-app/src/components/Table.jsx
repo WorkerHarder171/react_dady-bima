@@ -1,12 +1,17 @@
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteApiProduct } from "../redux/productSlice";
 
-function Table({ product, deleteProduct }) {
-  console.log("cek Product Table =>", product);
+
+function Table() {
+  const dispatch = useDispatch();
+  const products = useSelector((state) => state.list.products);
+
   return (
     <div>
       <div className="tabel-section mt-5">
-        <div className="container-fluid">
-          <h1 className="title-text text-center">List Product</h1>
+        <div className="px-5">
+          <h1 className="display-5 fw-bold text-center">List Product</h1>
           <table className="table table-striped" id="ListProduct">
             <thead>
               <tr>
@@ -20,17 +25,32 @@ function Table({ product, deleteProduct }) {
               </tr>
             </thead>
             <tbody>
-              {product?.map((data, index) => (
+              {products?.map((data, index) => (
                 <tr key={data.id}>
                   <td>{index + 1}</td>
                   <td>{data.name}</td>
                   <td>{data.category}</td>
-                  <td>{data.image}</td>
+                  <td>
+                    {
+                      <img
+                        className="border p-1"
+                        src={data.image}
+                        alt={data.image}
+                        width={150}
+                        height={150}
+                      />
+                    }
+                  </td>
                   <td>{data.freshness}</td>
-                  <td>{data.additional}</td>
+                  <td className="w-25">{data.additional}</td>
                   <td>${data.price}</td>
                   <td>
-                  <Link className="btn btn-success"  to={`/product-details/${data.id}`}>Details</Link>
+                    <Link
+                      className="btn btn-success m-1"
+                      to={`/product/${data.id}`}
+                    >
+                      Details
+                    </Link>
 
                     <Link
                       to={`/edit-product/${data.id}`}
@@ -40,7 +60,7 @@ function Table({ product, deleteProduct }) {
                     </Link>
 
                     <button
-                      onClick={() => deleteProduct(data.id)}
+                      onClick={() => dispatch(deleteApiProduct(data.id))}
                       className="btn btn-outline-primary m-1"
                     >
                       Delete

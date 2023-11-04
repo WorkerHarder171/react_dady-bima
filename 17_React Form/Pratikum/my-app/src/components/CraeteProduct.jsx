@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { v4 as uuid } from "uuid";
-// import ProductDetails from "../pages/ProductDetails";
 import Table from "./Table";
 
 function Main() {

@@ -1,13 +1,16 @@
 import React from "react";
 import Header from "../components/Header";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
-function ProductDetails({ product }) {
-  console.log("cek product PD =>", product);
-  const { params } = useParams();
-  const user = (data) => data.id === params;
+const ProductDetails = () => {
+  const { id } = useParams();
 
-  const { id, name, category, image, freshness, additional, price } = user;
+  // pengambilan data object dari redux
+  const products = useSelector((state) => state.list.products)
+  const product = products.find((product) => product.id === id);
+  const { name, category, image, freshness, additional, price } = product;
 
   return (
     <>
@@ -50,17 +53,13 @@ function ProductDetails({ product }) {
               </tbody>
             </table>
           </div>
-          <Link
-            to={"/dashboard"}
-            type="button"
-            className="btn mt-3 btn-primary w-100"
-          >
-            Back
-          </Link>
+        <Link to={"/dashboard"} type="button" className="btn mt-3 btn-primary w-100">
+          Back
+        </Link>
         </div>
       </div>
     </>
   );
-}
+};
 
 export default ProductDetails;
