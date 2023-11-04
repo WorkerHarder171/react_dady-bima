@@ -35,10 +35,6 @@ export const restFullAPI = {
     try {
       const response = await axiosInstance.delete(`/product/${id}`);
       console.log("response delete =>", response);
-      if (!response) {
-        return { response };
-      }
-      return alert("Apakah anda ingin menghapus product ini?");
     } catch (error) {
       if (error instanceof AxiosError) throw new Error(AxiosError);
       throw new Error(error);

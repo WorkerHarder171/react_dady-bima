@@ -14,6 +14,7 @@ function Main() {
   const [product, setProduct] = useState([]);
   const [file, setFile] = useState();
   const [fields, setFields] = useState();
+
   // Validasi
   const [validation, setValidation] = useState({});
 
@@ -27,7 +28,7 @@ function Main() {
   useEffect(() => {
     alert("Welcome");
     dispatch(fetchApiProduct());
-  }, []);
+  }, [dispatch]);
 
   // membuat validasi untuk product name
   const validateProduct = () => {

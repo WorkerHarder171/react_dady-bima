@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteApiProduct } from "../redux/productSlice";
-
+import { deleteApiProduct, } from "../redux/productSlice";
 
 function Table() {
   const dispatch = useDispatch();
